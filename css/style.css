@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text: #EDF1F7;
+    --red: #C22727;
+    --blue: #0041C2;
+    --green: #14B02D;
+    --yellow: #FFC12B;
+}
+
+body, button, a{
+    color: var(--text);
+    font: 400 1rem 'Poopins', sans-serif;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+.background{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    inset: 0;
+    z-index: -1;
+}
+
+.background video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.background::after{
+    content: " ";
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    column-gap: 64px;
+    width: 100%;
+    max-width: 1440px;
+    padding-top: 8px;
+}
+
+header img{
+    position: relative;
+    width: 45px;
+    height: auto;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    column-gap: 48px;
+}
+
+.navigation-social{
+    display: flex;
+    cursor: pointer;
+    margin-left: auto;
+    align-items: center;
+    column-gap: 24px;
+}
+
+.navigation-social svg{
+    width: 34px;
+    height: 34px;
+    opacity: 0.6;
+}
+
+.navigation-social svg:hover,
+header img:hover{
+    opacity: 1;
+    transform: translateY(-5px);
+    transition: 0.3s all ease-in-out;
+}
+
+.navigation-link{
+    font: 14px 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.navigation-link:hover{
+    color: var(--red);
+}
+
+.navigation-link::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: 0.4s all;
+}
+
+.navigation-link:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: 0.4s all;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.main-info{
+    width: 100%;
+    max-width: 570px;
+}
+
+.main-info p{
+    font-size: 18px;
+    margin: 20px 0 28px;
+}
+
+.main-info div{
+    display: flex;
+    column-gap: 32px;
+}
+
+.main-info div a,
+.main-info div button{
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    transform: skew(-10deg);
+}
+
+.main-info div a{
+    background: var(--red);
+}
+
+.main-info a:hover{
+    background: #811919;
+    transition: 0.3s all;
+}
+
+.main-info div button{
+    background: transparent;
+    border: 1px solid var(--text);
+}
+
+.main-info button:hover{
+    color: #811919;
+    transition: 0.3s all;
+}
+
+span{
+    color: var(--red);
+}
+
+@media (max-width: 627px) {
+    body{
+        font-size: 4px;
+    }
+}
